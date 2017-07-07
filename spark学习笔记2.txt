@@ -1,0 +1,117 @@
+
+
+1、函数入门
+
+定义函数
+
+def fab(name:String,age:Int)={
+
+}
+
+2、默认参数、带名参数
+
+
+def decorate(str:String,left:String= "[",right:String="]") = {
+	left + str + right
+}
+
+
+def decorate(name:String="xixiaohui") = {
+	printf("hi %s",name)
+}
+
+3、变长参数
+
+def sum(num:Int*)= { 
+	
+	var result = 0
+	for (i <- num) result +=i
+	result
+
+}
+
+调用
+sum(1,2,3,4,5)
+
+使用序列调用变长参数
+sum(1 to 5: _*)
+
+
+4、递归函数的使用
+
+def sum2(num:Int*):Int = {
+
+	if (nums.length == 0) 0
+	else nums.head + sum2(num.tail:_*)
+}
+
+5、过程
+def process():Uint = {
+
+
+}
+
+
+6、lazy值
+
+lazy val text = scala.io.Source.fromFile("H:\\xi\\test.txt").mkString
+
+print(text)
+
+
+7、异常
+
+8、Array
+	var nums = new Array[Int](10)
+	
+	
+9、ArrayBuffer
+	
+	
+10、遍历Array,ArrayBuffer
+	普通的for循环
+	跳跃式for循环
+	反向遍历
+	增强for循环
+	
+11、数组转换
+	
+	
+12、使用yield和函数式编程转换数组
+	
+	//对Array进行转换
+	
+	val a = Array(1,2,3,4,5)
+	val  result = for (elem <- a) yield 2*elem
+
+	//对ArrayBuffer进行转换
+	
+13、多维数组
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

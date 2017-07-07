@@ -1,0 +1,21 @@
+Consumer Key (API Key)	
+	B4PbUyBHiQbch0VxFSKB2tWJf
+
+Consumer Secret (API Secret)	
+	SbSc0v79lRYKJdzN8IDFZ3gXRKnI9DpFxOVf3mtsg3uEHJBVHN
+
+Access Level	
+	Read and write (modify app permissions)
+Owner	
+	yamazake346
+	
+Owner ID	
+	3020843641
+	
+	
+	
+Access Token	
+	3020843641-cibXWf5cW8xCXoBTw2CUId6jIcb1jfhap5mJndJ
+
+Access Token Secret	
+	nYZHd4NxNemcvmjvBQtIriGyUWB6tLvJMn4T354G3pCax

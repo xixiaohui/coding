@@ -1,0 +1,232 @@
+
+
+
+1、map 和  tuple
+
+//创建一个不可变的Map
+	val ages = Map("Leo"->30,"Jen",25,"Jack",23)
+
+//创建一个可变的Map
+	val ages = scala.collection.mutable.Map("Leo"->30,"Jen"->25,"Jack"->23)
+
+//使用另外一种方式定义map
+
+	val ages = Map(("Leo",30),("Jen",25),("Jack",23))
+
+//创建一个空的hashmap
+	val ages = new scala.collection.mutable.HashMap[String,Int]
+
+2、访问Map的元素
+
+3、修改Map的元素
+	//可变的map
+	增加多个元素 +=
+	减少去除元素 -=
+	//不可变的map
+	更新不可变map的元素
+	移除不可变map的元素	
+	
+4、遍历map
+	//遍历map的entrySet
+		for((key,value)<- ages) println(key +" " +value)
+	//遍历map的key
+		for (key <- ages.keySet) println(key)
+	//遍历map的value
+		for (value <- ages.values) println(value)
+		
+	//生成新的map，反转key和value
+		for ((eky,value) <- ages) yield (value,key)
+
+5、SortedMap和LinkedHashMap
+	//SortedMap可以自动对Map的key的排序
+	
+
+	
+	
+6、getter、setter
+
+	
+7、仅暴露field的getter方法
+
+8、private[this]
+	更加严格的访问限制，通过private[this]这个修饰符来实现
+
+9、@BeanProperty
+	
+	@BeanProperty val/var name
+
+10、 primary constructor 主构造器
+	
+	主constructor是与类名放在一起的，与java不同
+	而且类中，没有定义在任何方法或者代码块之中的代码，就是主constructor的代码
+	
+	class Student(name:String,age:Int){
+	
+		println("your name is "+name+"your age is "+ age)
+		
+	}
+	
+	class Student(name:String="leo",age:Int=30){
+	
+		println("your name is "+name+"your age is "+ age)
+		
+	}
+	
+	auxiliary constructor 辅助构造器
+		必须第一行调用主构造函数
+		this()
+	
+
+
+11、内部类
+	
+
+12、对象
+
+	object
+		不能定义接受参数的constructor
+		
+		//define module Person
+		
+		object Person{
+			private var eyeNum = 2
+			println("this Person object!")
+			def getEyeNum = eyeNum	
+		}
+	
+		Person.getEyeNum
+
+13、伴生对象
+	如果有一个class,还有一个与class同名的object,那么就称这个object是class
+	的伴生对象，class是object的伴生类
+	
+		class Person(val name:String,val age:Int){
+			def sayHello = println("Hi," + name + "you are "+ age +"years old."+
+			"and you must have" +Person.getEyeNum+"eyes")
+		}
+	
+	伴生类和伴生对象必须放在同一个.scala文件里
+	
+
+14、让object继承抽象类
+	
+	abstract class Hello(var message:String){
+		def sayHello(name:String):Unit
+	
+	}
+	
+	object HelloImpl extends Hello("hello"){
+		override def sayHello(name:String) = {
+			println(message + " ," +name)
+		}
+	}
+	
+	object 继承抽象类，并覆盖抽象类中的方法
+	object 的功能其实和class类似，除了不能定义接受参数的constructor之外
+	
+	
+15、apply方法
+	
+	object 中非常重要的一个特殊方法，就是apply方法
+	
+	通常在伴生对象中实现apply方法，并在其中实现构造伴生类的对象的功能
+	
+	而创建伴生类的对象时，通常不会使用new Class的方式，而是使用Class()的方式，
+	隐式地调用伴生对象的apply方法，这样会让对象创建更加简洁
+	
+
+16、main
+
+	object HelloWorld {
+		def main(args: Array[String]):Unit = {
+				
+		}
+	}
+	
+17、object 实现枚举功能
+
+	继承Enumeration
+	调用 Value方法来初始化枚举值
+	
+	object Season extends Enumeration {
+		
+		
+		val SPRING,SUMMER,AUTUMN,WINTER = Value
+		
+	}
+	
+	
+	for(ele <- Season.values) println(ele)
+	
+	
+18、继承
+
+	final
+	extends
+	
+	override
+	super
+	
+	
+	isInstanceOf
+	asInstanceOf
+		类型装换
+		class Person
+		class Student extends Person
+		
+		val p = new Student
+		var s:Student = null
+		
+		if(p.isInstanceOf[Student]) s = p.asInstanceOf[Student]
+	
+	getClass
+	classOf
+		p.getClass == classOf[Person]
+		//false
+		p.getClass == classOf[Student]
+		//true
+	
+	使用模式匹配进行类型判断
+		
+		p.match{
+			case per:Person => println("it's Person's object.")
+			case _ => println("unknown type")
+		}
+	
+	protected
+	protected[this]
+	
+	匿名子类（匿名内部类）
+		
+	
+	抽象类
+	abstract  class Person(val name:String){
+		def sayHello:Unit
+	}
+	
+	class Student(name:String) extends Person(name){
+		def sayHello:Unit = println("hello," + name)
+	}
+	
+	不需要使用override
+
+19、trait
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+

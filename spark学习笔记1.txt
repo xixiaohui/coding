@@ -1,0 +1,174 @@
+spark 学习笔记一
+
+
+
+
+1、scala安装
+
+2.10.4
+
+scala-path/bin 放入PATH变量中
+
+2、REPL
+
+R 取值
+E 求值
+P 打印
+L 循环	
+
+3、Java与Scala的关系
+基于java 虚拟机JVM的一门编程语言
+
+编译成字节码，然后交由JVM虚拟机来运行，所以
+scala是可以和java无缝连接的，可以随意调用java代码
+
+
+4、变量声明
+var
+val
+
+val name:String = "Hello World"
+
+5、数据类型与操作符
+	Byte
+	Char
+	Short
+	Int
+	Long
+	Float
+	Double
+	Boolean
+	
+	类型的加强版类型
+	
+	基本操作符
+	
+	
+	没有++，必须写成count+=1这种形式
+
+6、函数调用
+
+	import scala.math._
+	
+	sqrt(2)
+	
+	pow(2,2)
+	
+	"hello world".distinct
+	
+	apply() 构造对象
+	
+	"hello world"(6)相当于"hello world".apply(6)
+	
+
+7、if表达式
+	
+	val age = 18
+	
+	val isAdult = if (age > 18 ) 1 else 0
+	
+	if (age > 18) "adult" else 0 
+	# Any = 0
+
+	if (age < 12) {
+		"children"} else ()
+		
+		
+	:paste 进入粘贴模式
+	
+	在scala的shell模式下，怎么实现多行编程
+	
+	
+8、
+	一行里面放多个语句，用;隔开
+	var d =if (a<10){b =b+1;c = c+1}
+	
+	输出：
+	print()
+	println()
+	printf()
+	
+	readLine()
+	readInt()
+	
+	printf("Hi,%s,you are %d years old,so you legal to play our greatful games!")
+	
+	val n = 10
+	breakable{
+		for (i <- 1 to n) print(i)
+	}
+
+	
+	for (i <- 1 until n) print(i)
+	
+	
+	
+	
+	
+	
+	
+import scala.util.control.Breaks._
+
+breakable{
+	var n =10
+	for (c <- "hello world"){
+		if(n==5) break;
+		print(c)
+		n -=1
+	}
+}
+	
+	高级for循环
+	
+for(i <- 1 to 9;j<- 1 to 9){
+if(j==9){
+println(i*j)
+}else{
+print(i*j+" ")
+}
+}
+	if 守卫
+
+	for推导式：构造集合
+		for (i <- 1 to 10) yield i
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+
+1、class
+
+方法可以访问该类的所有对象的私有字段
+
+
+
+2、在函数中嵌套函数，在类中嵌套类
+
+
+3、Java中包名称是绝对的，Scala中包名是相对的
+
+
+4、正则表达式
+	
+
+5、特质
+
+	所有的java接口都可以作为Scala特质使用
+	和java 一样，Scala类只能有一个超类，但可以有任意数量的特质
+
+	trait extends class
+
+6、操作符
+	
+	
+7、函数式编程
+	 	
+	 	def  sayHello(name:String) = {println("hi"+name)}
+	 	var s = sayHello _
+
+	 	//匿名函数
+	 	var sayHello = (name:String) =>println("hello " + name)
+
+	 	//高阶函数
+	 	def greeting(func:(String) => Unit,name:String) { func(name)}
+
+
+	 	//高阶函数的另外一个功能是将函数作为返回值
+	 	def getGreetingFunc(msg:String) = (name:String) => println(msg +"," + name)
+
+	 	val greetingFunc = getGreetingFunc("hello")
+	 	val greetingFunc2 = getGreetingFunc("hi")
+	 	
+	 	greetingFunc("leo")
+	 	greetingFunc2("xixiaohui")
+
+
